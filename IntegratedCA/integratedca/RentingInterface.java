@@ -1,20 +1,24 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package integratedca;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Movie {
+/**
+ *
+ * @author morgane
+ */
+public class RentingInterface {
+    class Movie {
     String title;
     boolean rented;
 
-    Movie(String title) {
-        this.title = title;
-        this.rented = false;
     }
-}
 
-public class RentingInterface {
-    private static ArrayList<Movie> movies = new ArrayList<>();
+    private static final ArrayList<Movie> movies = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
     
     /**
@@ -68,3 +72,4 @@ public class RentingInterface {
         System.out.println("Movie not found or not rented. Please check and try again.");
     }
 }
+
