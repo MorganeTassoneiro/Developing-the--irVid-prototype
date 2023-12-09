@@ -1,13 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package integratedca;
-
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import integratedca.DatabaseConnector;
+/**
+ *
+ * @author morgane
+ */
 
 public class MovieTableCreator {
-    private final DatabaseConnector connector;
     private String databaseName;
 
        public String getDatabaseName() {
@@ -23,7 +26,6 @@ public class MovieTableCreator {
      * @param databaseName
      */
     public MovieTableCreator(DatabaseConnector connector, String databaseName) {
-        this.connector = connector;
         this.databaseName = databaseName;
     }
 
@@ -34,7 +36,7 @@ public class MovieTableCreator {
 public void createMoviesTable() throws SQLException {
         String createTableSQL = generateCreateTableSQL();
         
-       String connection;
+       String connection = null;
       
             // Create the movies table if it doesn't exist
             try (Statement statement = connection.createStatement()) {
@@ -44,8 +46,7 @@ public void createMoviesTable() throws SQLException {
                         "rented BOOLEAN NOT NULL" +
                         ")");
 
-         try (Connection Connection = connector.getConnection(); 
-             Statement Statement = connection.createStatement()) {
+         try {
             statement.executeUpdate(createTableSQL);
             System.out.println("Successfully created.");
         } catch (SQLException e) {
@@ -57,14 +58,10 @@ private String generateCreateTableSQL() {
     return null;
 }
 
-    private void handleSQLException(String errorMessage, SQLException e) {
-        System.out.println(errorMessage);
-        e.printStackTrace();
+    private void handleSQLException(String par, SQLException e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
 }
-
-
-
-
-
 
