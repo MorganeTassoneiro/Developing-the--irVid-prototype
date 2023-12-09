@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 /**
  *
- * @author morgane
+ * @author morgane 2021327
  */
 
 public class MovieTableCreator {

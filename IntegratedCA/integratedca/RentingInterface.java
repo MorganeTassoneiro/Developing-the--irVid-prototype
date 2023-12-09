@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author morgane
+* @author morgane 2021327
  */
 public class RentingInterface {
     class Movie {
