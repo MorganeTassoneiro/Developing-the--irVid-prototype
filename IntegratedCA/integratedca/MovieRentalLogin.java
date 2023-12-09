@@ -1,3 +1,5 @@
+package integratedca;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,17 +16,12 @@ class Movie {
 public class MovieRentalLogin {
     private static ArrayList<Movie> movies = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
-
-
-    private static void displayMenu() {
-        System.out.println("Movie Rental Prototype");
-        System.out.println("1. Display available movies");
-        System.out.println("2. Rent a movie");
-        System.out.println("3. Return a movie");
-        System.out.println("4. Exit");
-    }
-
-    private static void displayMovies() {
+    
+    /**
+     * Show the lis of available movies 
+     * @param newParam TODO
+     */
+    private static void displayMovies(Object newParam) {
         System.out.println("Available Movies:");
         for (Movie movie : movies) {
             if (!movie.rented) {
@@ -33,7 +30,11 @@ public class MovieRentalLogin {
         }
     }
 
-    private static void rentMovie() {
+    /**
+     * Asks the user to input the title of the movie they want to rent. 
+     * @param newParam TODO
+     */
+    private static void rentMovie(final Object newParam) {
         System.out.print("What movie do tou want to rent?: ");
         String title = scanner.nextLine();
 
@@ -48,7 +49,11 @@ public class MovieRentalLogin {
         System.out.println("Movie not found or already rented. Try again.");
     }
 
-    private static void returnMovie() {
+    /**
+     * Asks the user to input the title of the movie they want to rent.
+     * @param newParam TODO
+     */
+    private void returnMovie(Object newParam) {
         System.out.print("Enter the title of the movie you want to return: ");
         String title = scanner.nextLine();
 
