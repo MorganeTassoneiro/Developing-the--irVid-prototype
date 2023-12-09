@@ -7,6 +7,8 @@ package integratedca;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import integratedca.RentingInterface.Movie;
+
 /**
  *
  * @author morgane 2021327
