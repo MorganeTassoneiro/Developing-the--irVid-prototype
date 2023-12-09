@@ -13,7 +13,7 @@ class Movie {
     }
 }
 
-public class MovieRentalLogin {
+public class RentingInterface {
     private static ArrayList<Movie> movies = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
     

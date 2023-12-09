@@ -10,7 +10,15 @@ public class MovieTableCreator {
     private final DatabaseConnector connector;
     private String databaseName;
 
-       /**
+       public String getDatabaseName() {
+        return databaseName;
+    }
+
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+    }
+
+    /**
      * @param connector
      * @param databaseName
      */
@@ -20,12 +28,14 @@ public class MovieTableCreator {
     }
 
  /**
+ * @throws SQLException
  * 
  */
-public void createMoviesTable() {
+public void createMoviesTable() throws SQLException {
         String createTableSQL = generateCreateTableSQL();
         
-       Connection connection;
+       String connection;
+      
             // Create the movies table if it doesn't exist
             try (Statement statement = connection.createStatement()) {
                 statement.executeUpdate("CREATE TABLE IF NOT EXISTS movies (" +
@@ -46,11 +56,14 @@ public void createMoviesTable() {
 private String generateCreateTableSQL() {
     return null;
 }
-}
+
     private void handleSQLException(String errorMessage, SQLException e) {
         System.out.println(errorMessage);
         e.printStackTrace();
     }
+}
+
+
 
 
 
