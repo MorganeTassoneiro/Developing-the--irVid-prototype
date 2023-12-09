@@ -1,38 +1,41 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package integratedca;
-S
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/**
+ *
+ * @author morgane
+ */
 public class LoginArea {
-
-class User {
-    private String username;
-    private String password;
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public boolean authenticate(String enteredUsername, String enteredPassword) {
-        return username.equals(enteredUsername) && password.equals(enteredPassword);
-    }
-}
 
 public class MovieRentalApp {
    
     private ArrayList<Movie> movies;
+    private final Scanner scanner;
+
+    private User currentCustomer;
+
+    public MovieRentalApp() {
+        movies = new ArrayList<>();
+        scanner = new Scanner(System.in);
+        currentCustomer = null;
+    }
     public ArrayList<Movie> getMovies() {
         return movies;
     }
 
+    /**
+     *
+     * @param movies
+     */
     public void setMovies(ArrayList<Movie> movies) {
         this.movies = movies;
     }
-
-    private Scanner scanner;
-    private User currentCustomer;
 
     public User getCurrentCustomer() {
         return currentCustomer;
@@ -40,12 +43,6 @@ public class MovieRentalApp {
 
     public void setCurrentCustomer(User currentCustomer) {
         this.currentCustomer = currentCustomer;
-    }
-
-    public MovieRentalApp() {
-        movies = new ArrayList<>();
-        scanner = new Scanner(System.in);
-        currentCustomer = null;
     }
     
 
@@ -74,8 +71,18 @@ public class MovieRentalApp {
 
     }
 }
+
+class User {
+    private final String username;
+    private final String password;
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public boolean authenticate(String enteredUsername, String enteredPassword) {
+        return username.equals(enteredUsername) && password.equals(enteredPassword);
+    }
 }
-
-
-
-   
+}
