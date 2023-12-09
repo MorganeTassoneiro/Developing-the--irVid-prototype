@@ -1,8 +1,5 @@
 package integratedca;
-
-/**
- * @author Morgane
- */
+S
 import java.util.ArrayList;
 import java.util.Scanner;
 
